@@ -1,0 +1,7 @@
+#dotted-box {
+    margin-top: 10px;
+    margin-left: 85%;
+    border: dotted 2px #ffffff;
+    border-color: white;
+    border-radius: 25%;
+}
