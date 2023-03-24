@@ -58,7 +58,7 @@ function user_validation(){
         else{
             if(claimant_registration($fname,$lname,$uname,$email,$pass)){
                 
-                //set_message('<p class="bg-success text-center lead">You Have successfully registered</p>');
+                set_message('<p class="bg-success text-center lead">You Have successfully registered</p>');
                 redirect('index.php');
             }
         }
@@ -97,20 +97,26 @@ function claimant_registration($fname,$lname,$uname,$email,$pass)
     $UEmail=escape($email);
     $Pass=escape($pass);
 
-    if(Email_Exists($email)){
+    if(Email_Exists($UEmail)){
         return true;
     }
-    else if(User_Exists($uname)){
+    else if(User_Exists($Uname)){
         return true;
     }
     else{
         $Password=md5($Pass);
-        $temp='$Uname'+microtime();
-        $Validation_code=md5($temp);
+        
+        $Validation_code=md5($Uname.strval(microtime()));
 
-        $sql="insert into `claimant-details`(`First_Name`,`Last_Name`,`User_Name`,`Email`,`Pass_Validation`,`Validation_Code`) values('$Fname','$Lname','$Uname','$UEmail','$Password','$Validation_code','0')";
+        $sql="insert into `claimant-details`(`First_Name`,`Last_Name`,`User_Name`,`Email`,`Pass_Validation`,`Validation_Code`,`Active`) values('$Fname','$Lname','$Uname','$UEmail','$Password','$Validation_code','0')";
         $result=Query($sql) ;
-        confirm($result);  
+
+        
+        confirm($result);
+
+       // $row=fetch_data($result);
+       // echo $row['Email'];
+        //confirm($result);  
         return true;
     }
     }
