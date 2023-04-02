@@ -1,4 +1,6 @@
-<?php require_once('functions/functions.php');
+<?php 
+//SESSION_start();
+require_once('functions/functions.php');
 require_once('functions/config.php');
 require_once('functions/db.php');
 
@@ -28,33 +30,28 @@ require_once('functions/db.php');
     <div class="row  align-items-center ">
     
         <div  class="m-auto col-4" align="center">
-            <form method="POST" action="login.php">
+            <form method="POST">
                 <hr>
                 <div class="form-group mt-40 col-8">
-
+<?php display_message();
+login_validation(); ?>
                     <input type="email" name="email" placeholder="User Name" class="form-control m-lg-auto" >
                     <br> 
 
                     <input type="password" name="password" placeholder="password" class="form-control col-8">
                     <br>
                     <br>
-                    <input type="checkbox" name="remember" id="remember" >
-                    <label for="remember" class="text-white col-4">
-                      Remember me
-                    </label>
+                    <button type="submit"   class="btn btn-rounded btn-info mt-20 col-4">Sign In</button>
+            
                 </div>
 
             </form>
 
         </div>
     <div class="row align-items-center">
-        <!--
-        <div data-sitekey="YOURSITEKEY" class="g-recaptcha"></div>
-        -->
+      
 
-            <div class="col-12" text-center align="center">
-                 <button type="submit"   class="btn btn-rounded btn-info mt-20 col-1">Sign In</button>
-            </div>
+            
             <div class="m-auto col-4 md-lg mr-10 text-white-50">
                 <a href="sign-up.php" class="text-white mr-20 col-8 form-control-lg">Sign Up</a>
             </div>

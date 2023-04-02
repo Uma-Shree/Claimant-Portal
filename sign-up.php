@@ -1,4 +1,5 @@
 <?php require_once('functions/functions.php');
+SESSION_start();
 ?>
 
 <!DOCTYPE html>
@@ -14,11 +15,11 @@
             <div class="card bg-dark mt-5 py-2">
 
             <div class="card-title">
-                <h3 class="text-center mt-2"> Sign Up</h3>
+                <h3 class="text-center mt-2">Sign Up</h3>
                 <hr>
             </div>
             <div class="card-body">
-            <?php user_validation(); ?> 
+                <?php user_validation(); ?>
                 <form method="POST">
 
                     <input type="text" name="firstname" placeholder="First Name" class="form-control mb-2 py-2" required>
@@ -31,6 +32,7 @@
 
                     <button class="btn btn-success float-right"> Sign Up Now </button>
                 </form>
+                 
             </div>
             </div>
             </div>
