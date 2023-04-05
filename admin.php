@@ -20,33 +20,34 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="#" class="active">
-            <i class='bx bx-grid-alt ' ></i>
+          
+          <a href="admin.php" >
+            <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="zone.php">
             <i class='bx bx-box' ></i>
-            <span class="links_name">Zone</span>
+            <span class="links_name">Zonal Officer</span>
           </a>
         </li>
         <li>
           <a href="#">
-            <i class='bx bx-pie-chart-alt-2' ></i>
+            <i class='bx bx-pie-chart-alt-2'></i>
             <span class="links_name">File Movement</span>
           </a>
         </li>
         <li>
           <a href="#">
-            <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="links_name">Admins</span>
+            <i class='bx bx-pie-chart-alt-2'></i>
+            <span class="links_name">Analytics</span>
           </a>
         </li>
         <li>
           <a href="#">
-            <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="links_name">Analytics</span>
+            <i class='bx bx-pie-chart-alt-2'></i>
+            <span class="links_name">see file status</span>
           </a>
         <hr>
         <li>

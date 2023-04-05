@@ -1,8 +1,11 @@
 <?php 
-//SESSION_start();
+session_start();
 require_once('functions/functions.php');
 require_once('functions/config.php');
 require_once('functions/db.php');
+
+
+
 
 
 ?>
@@ -41,7 +44,7 @@ login_validation(); ?>
                     <input type="password" name="password" placeholder="password" class="form-control col-8">
                     <br>
                     <br>
-                    <button type="submit"   class="btn btn-rounded btn-info mt-20 col-4">Sign In</button>
+                    <button type="submit" class="btn btn-rounded btn-info mt-20 col-4">Sign In</button>
             
                 </div>
 

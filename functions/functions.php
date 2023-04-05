@@ -144,8 +144,9 @@ function claimant_registration($fname,$lname,$uname,$email,$pass)
                 }
             }
             else{
+               // user_login($userEmail,$UserPass);
                 if(user_login($UserEmail,$UserPass)){
-                    redirect("admin.php");
+                    //redirect("admin.php");
 
                 }
                 else{
@@ -154,28 +155,14 @@ function claimant_registration($fname,$lname,$uname,$email,$pass)
             }
 
 
-             #$sql="select `Pass_Validation` from `claimant-details` where `Email`=$uemail";
-             #$sql2="select `User_Name` from `claimant-details` where `Email`=$uemail";
-             #$result=Query($sql);
-              #confirm($result);
-
-              #$result2=Query($sql2);
-              #confirm($result2);
-              #$unHPass=md5($result);
-
-
-
-              #if($upass==$unHPass){
-               # echo '<div class="alert alert-danger text-gray">'.$result2.'</div>';
-                #  echo 'present here!';
-                 # echo $result2;
-             # }
+             
             }
 
             
     }
 
     function user_login($UEmail,$UPass){
+        //session_start();
         $query="select* from `claimant-details` where `Email`='$UEmail'" ;
         
         #edied: and Active='1'
@@ -184,6 +171,27 @@ function claimant_registration($fname,$lname,$uname,$email,$pass)
         if($row=fetch_data($result)){
             $db_pass=$row['Pass_Validation'];
             if(md5($UPass)==$db_pass){
+            
+                $error='';
+
+        $_SESSION['Role']=$row['Role'];
+        $_SESSION['IS_LOGIN']='yes';
+        if($row['Role']==1){
+            redirect("admin.php");
+           // header('location:./dashboard.php');
+        }
+        if($row['Role']==2){
+            redirect("admin.php");
+            //header('location:admin.php');
+        }
+        if($row['Role']==3){
+            redirect("Zonal_officer.php");
+        
+        }
+        if($row['Role']==4){
+            redirect("claimant_dashboard.php");
+        
+        }
                 return true;
 
             }
@@ -192,5 +200,7 @@ function claimant_registration($fname,$lname,$uname,$email,$pass)
             }
 
         }
+
+        
     }
 ?>

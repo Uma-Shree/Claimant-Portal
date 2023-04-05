@@ -20,7 +20,7 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="#" class="active">
+          <a href="#" ">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
@@ -59,6 +59,7 @@
         
       </ul>
   </div>
+
   <section class="home-section">
     <nav>
       <div class="sidebar-button">
@@ -85,6 +86,7 @@
         
      
   </section>
+
 
   <script>
    let sidebar = document.querySelector(".sidebar");
